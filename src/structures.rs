@@ -1,6 +1,9 @@
 #[allow(dead_code)]
 #[allow(unused_variables)]
 
+// import libraries
+use std::mem;
+
 // GEOMETRICAL STRUCTURES
 // Let's create a point in a 3D space using 'struct'
 struct Point {x:f64, y:f64, z:f64}
@@ -84,5 +87,131 @@ pub fn options()
     // Rust has special keywords to check whether something contains None. Two of these keywords are 'if let' and 'while let'
     if let Some(z) = result {println!("result is {}", z)}
     // in the case above, if the result it equal to none, then the if statement doesn't get executed and vice versa
+}
 
+
+// ARRAYS
+pub fn array()
+// Before we even start, remember that arrays are object of FIXED size.
+// If you want something of variable size you must choose another data structure
+{   // VECTORS, that is a 1D arrray
+    // Fill in an array by specifying an initialized
+    let mut a:[i32;5] = [1,2,3,4,5];  //an array is a data structure where the number of elements included is explicitly declared
+    println!("Array {:?} has {} elements, first is {}", a, a.len(), a[0]);
+    a[0] = 10;  //overwrite first element
+    println!("New first element is {}", a[0]);
+
+    if a != [1,2,3,4,5] {println!("match")} else if a == [10,2,3,4,5] {println!("changed")} else {println!()};
+
+
+    // Bulk fill the array with the same value
+    let b = [1;10]; //b.len() == 10
+    // Below are 2 ways to print the array
+    println!("B is {:?}", b);
+    for i in 0..b.len()
+    {
+        println!("{}", b[i])
+    }
+
+    // Take a moment to ponder over memory optimization
+    let b = [1;10];
+    println!("b takes up {} bytes", mem::size_of_val(&b)); //undeclared element types
+    let c:[u16;10] = [1;10];
+    println!("b takes up {} bytes", mem::size_of_val(&c));  //array of u16-type elements
+    let d:[i8;10] = [1;10];
+    println!("b takes up {} bytes", mem::size_of_val(&d)); //array of i8-type elements
+
+
+    // MATRICES, that is 2D+ arrays
+    // Build matrices very easily as arrays of arrays
+    let e:[[i8;3];3] =
+    [
+        [-1, 0, 0],
+        [0, -1, 0],
+        [0, 0, 1]
+    ];
+    println!("Matrix e is {:?}", e);
+
+    // Now print the diagonal values in 2 distinct ways
+    // 1st way
+    for i in 0..e.len()
+    {
+        println!("{}", e[i][i])
+    }
+
+
+    // 2nd way
+    for i in 0..e.len()
+        {for j in 0..e[i].len()
+            {if i==j //we are along the diagonal
+                {println!("e[{}][{}] = {}", i, j, e[i][j])};
+            }
+        }
+}
+
+
+
+// SLICES
+pub fn use_slice(slice: &mut[i32])
+{
+    println!("slice = {:?}, first elem = {}, len = {}", slice, slice[0], slice.len())
+}
+
+
+pub fn slices()
+{ // Slices are parts of an array whose size is unknown at declaration time.
+  // Mathematically, you can think of a slice as a mutable partition of an array. In other words, slices are the mutable counterpart to arrays.
+
+    let mut slicy = [1,2,3,4,5];
+    slicy[3] = 100;
+    use_slice(&mut slicy[1..4]); //partition the array into a slice
+    use_slice(&mut slicy); //convert the entire array into a slice
+}
+
+
+// TUPLES
+// The types of elements in a tuple can mismatch, whereas in an array all elements are of the same type
+pub fn tuples()
+{
+    let x:f32 = 6.0;
+    let y:f32 = 4.0;
+    let my_tuple = (x+y, x*y);
+    println!("{0}+{1}={2}, and {0}*{1}={3}", x,y,my_tuple.0, my_tuple.1);
+
+    // destructuring of a function returning a tuple
+    fn power_and_division(x:f32, y:f32) -> (f32, f32)
+    { (f32::powf(x,y), x/y) }
+    let pd = power_and_division(x,y);
+    let (a,b) = pd;
+    println!("{0}^{1}={2}, and {0}/{1}={3}", x,y,a,b);
+
+    // destructuring a tuple of tuples
+    let pd2 = power_and_division(9.0,3.0);
+    let combo_tuple = (pd, pd2);
+    println!("{:?}", combo_tuple);
+    let ((c,d),(e,f)) =  combo_tuple;
+
+    // Tuples can contain mixed type elements
+    let mixed_tuple = (true, 7.5, false, 'r', -1i8);
+    println!("{:?}", mixed_tuple);
+
+    // How do you make a single element tuple? It's simple, use a comma inside round brackets!
+    let meaning = (42,); //if you omit the comma you obtain an integer instead of a tuple
+    println!("{:?}", meaning);
+}
+
+
+
+struct point<T> {x:T, y:T}
+struct Pointy<T,V> {x:T, y:V}
+struct Liny<T> {start: point<T>, end:point<T>}
+
+pub fn generics()
+{
+    let a:Pointy<i8,u32> = Pointy{x:9, y:11};
+    let b:point<f32> = point{x:1.0, y:3.0};
+    let c:point<f32> = point{x:6f32, y:7f32};
+    println!("a = ({},{}), b = ({},{})", a.x, a.y, b.x, b.y);
+
+    let myline:Liny<f32> = Liny{start:b, end:c};
 }

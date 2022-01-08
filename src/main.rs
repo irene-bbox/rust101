@@ -7,6 +7,7 @@ mod variables;
 mod stackheap;
 mod controlflow;
 mod structures;
+mod pmatch;
 use std::mem;
 
 
@@ -26,5 +27,11 @@ fn main()
   //structures::structures();
   //structures::enums();
   //structures::unions();
-  structures::options();
+  //structures::options();
+  //structures::array();
+  //structures::slices();
+    //structures::tuples();
+  structures::generics();
+  //pmatch::pattern_matching();
+
 }
