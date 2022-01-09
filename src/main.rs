@@ -8,6 +8,7 @@ mod stackheap;
 mod controlflow;
 mod structures;
 mod pmatch;
+mod stdcollection;
 use std::mem;
 
 
@@ -31,7 +32,10 @@ fn main()
   //structures::array();
   //structures::slices();
     //structures::tuples();
-  structures::generics();
+  //structures::generics();
   //pmatch::pattern_matching();
+  //stdcollection::vectors();
+  stdcollection::hashmap();
+
 
 }
