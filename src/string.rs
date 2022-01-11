@@ -6,7 +6,6 @@
 
 // Import libraries
 use rand::Rng;
-use sdt::io::stdin;
 
 // STRINGS
 // There exist 2 object types in Rust for strings: 'str' and 'String'

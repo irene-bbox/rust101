@@ -9,6 +9,8 @@ mod controlflow;
 mod structures;
 mod pmatch;
 mod stdcollection;
+mod string;
+mod function;
 use std::mem;
 
 
@@ -35,7 +37,14 @@ fn main()
   //structures::generics();
   //pmatch::pattern_matching();
   //stdcollection::vectors();
-  stdcollection::hashmap();
+  //stdcollection::hashmap();
+  //stdcollection::hashset();
+  //stdcollection::iterators();
+  //string::strings();
+  //function::funk();
+  //function::methods();
+  //function::closures();
+  function::high_order_fn();
 
 
 }
