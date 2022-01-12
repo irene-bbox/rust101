@@ -11,6 +11,7 @@ mod pmatch;
 mod stdcollection;
 mod string;
 mod function;
+mod traits;
 use std::mem;
 
 
@@ -33,7 +34,7 @@ fn main()
   //structures::options();
   //structures::array();
   //structures::slices();
-    //structures::tuples();
+  //structures::tuples();
   //structures::generics();
   //pmatch::pattern_matching();
   //stdcollection::vectors();
@@ -44,7 +45,12 @@ fn main()
   //function::funk();
   //function::methods();
   //function::closures();
-  function::high_order_fn();
+  //function::high_order_fn();
+  //traits::RustTrait();
+  //traits::TraitParameter();
+  //traits::into();
+  //traits::drop();
+  traits::operatoroverload();
 
 
 }
