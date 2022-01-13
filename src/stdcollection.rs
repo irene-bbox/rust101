@@ -21,8 +21,8 @@ pub fn vectors()
     my_vec.push(12.0);
     my_vec.push(13.0);
 
-    //let indx:i32 = 0; // An index MUST be a u-size, that is unsigned and of standard size. It I'm running a 64bit machine it makes no sense for the usize to be 32.
-    // So, if we ran the line of code above, the program crashed because it doesn't recognize i32 as a legitimate index type. However, the line of code below works fine:
+    // let indx:i32 = 0; // An index MUST be a u-size, that is unsigned and of standard size. If I'm running a 64bit machine it makes no sense for the usize to be 32.
+    // So, if we ran the line of code above, the program would crashed because it doesn't recognize i32 as a legitimate index type. However, the line of code below works fine:
     let indx:usize = 0;
 
     println!("my_vec = {:?}, first elem = {}, {}", my_vec, my_vec[0], my_vec[indx]); // {:?} is called the 'debug output'
@@ -59,7 +59,7 @@ pub fn vectors()
 
 
 // HASHMAPS
-// Hashmaps are containers for pairs of values. Hashmaps in Rust = Dictonary in Python
+// Hashmaps are containers for pairs of values. Hashmaps in Rust = Dictionary in Python
 pub fn hashmap()
 {
     // initiate a HashMap with 2 pairs
@@ -80,15 +80,15 @@ pub fn hashmap()
         let actual = shapes
             .entry("circle".into())
             .or_insert(2);
-        *actual = 0;
+        *actual = 27;
         println!("{:?}",shapes);
     }
 }
 
 
 // HASHSETS
-// A Hashset is a data type that represents a mathematican set, i.e. a container of unique, unordered elements. Hashsets in Rust = Sets in Python
-// Use a hashset when you want a container with unique elements and npo duplicates
+// A Hashset is a data type that represents a mathematical set, i.e. a container of unique, unordered elements. Hashsets in Rust = Sets in Python
+// Use a hashset when you want a container with unique elements and no duplicates
 pub fn hashset()
 {
     let mut greek = HashSet::new();
@@ -105,7 +105,7 @@ pub fn hashset()
     let add_letter = greek.insert("omega");
     if add_letter { print!("Insertion succeeded") };
 
-    // How can I check whether an element is contained in a set? Use the function continue(), which returns a boolean
+    // How can I check whether an element is contained in a set? Use the function containt(), which returns a boolean
     if !greek.contains("epsilon") { println!("Epsilon is not in this set") } else { println!("Epsilon is in the set") };
     print!("greek = {:?}", greek);
 
@@ -176,7 +176,8 @@ pub fn iterators()
     // into_iter() is a move operation that transforms the collection into a bivalue iterator
     let mut vec1 = vec![1,2,3,4];
     let mut vec2 = vec![5,6,7,8];
-    vec1.extend(vec2); // what happens behind the scenes is that the extend() function calls the into_iter() function to extract all values from a vector and itrerates them, making the original vector unusable! The collection gets destroyed but the elements are preserved.
+    vec1.extend(vec2); // what happens behind the scenes is that the extend() function calls the into_iter() function to extract all values from a vector and iterates them,
+    // making the original vector unusable! The collection gets destroyed but the elements are preserved.
     println!("append = {:?}", vec1);
 }
 

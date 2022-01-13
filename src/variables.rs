@@ -5,17 +5,7 @@
 use std::mem;
 
 
-// In Rust there exist such a thing as GLOBAL variables, which are declared outside of the main function
-// Global variables can be mathematical constants or can be user-defined
-// Global variables can be mutable. If so, declare the scope to be 'unsafe'. If you run a mutable global variable outside of an 'unsafe' scope, Rust returns an error
-// GLOBAL VARIABLES
-const MEANING_OF_LIFE:u8 = 42;
-static MY_CONSTANT:i8 = -42;
-static mut UNSAFE:i8 = 17;
-
-
-
-// VARIABLES
+// VARIABLES: primitives
 pub fn variables()
 {
     // VARIABLES TYPES: u8, u16, u32, u64, u128, i8, i16, ...
@@ -69,7 +59,7 @@ pub fn variables()
 }
 
 
-
+// LOGIC OPERATORS
 pub fn operators()
 { //ARITHMETIC operators
     let mut a = (72/2-16)*5;
@@ -117,7 +107,7 @@ pub fn operators()
 // SCOPE AND SHADOWING
 // Notice that every variable has a scope and it only exists within the scope of the function where the variable is defined
 // i.e., if you define variable a inside function variables{} and then you only execute the function main(), the compiler returns an error
-// A scope in Rust is defined by opening and closing curly braces {    }
+// A scope in Rust is defined by opening and closing curly brackets {    }
 
 pub fn scope_and_shadowing()
 { let a = 1;
@@ -134,6 +124,13 @@ pub fn scope_and_shadowing()
 }
 
 
+// GLOBAL VARIABLES
+// In Rust there exist such a thing as GLOBAL variables, which are declared outside of the main function
+// Global variables can be mathematical constants or can be user-defined
+// Global variables can be mutable. If so, declare the scope to be 'unsafe'. If you run a mutable global variable outside of an 'unsafe' scope, Rust returns an error
+const MEANING_OF_LIFE:u8 = 42;
+static MY_CONSTANT:i8 = -42;
+static mut UNSAFE:i8 = 17;
 pub fn constants()
 {
     println!("const = {}, static = {}", MEANING_OF_LIFE, MY_CONSTANT);
@@ -144,4 +141,26 @@ pub fn constants()
             UNSAFE += 2;
             println!("Mutable global variable after mutation = {}", UNSAFE);
         }
+}
+
+
+// STACK & HEAP
+struct Point {x:f64, y:f64}
+
+
+fn origin() -> Point
+{
+    Point{x:0.0, y:0.0}
+}  //a function creating the point 'origin' of the Cartesian Plane
+
+
+pub fn stack_and_heap()
+{
+    let p1 = origin(); //this is a stack allocation of p1
+    let p2 = Box::new(origin()); //this is a heap allocation of p2
+    println!("p1 takes up {} bytes", mem::size_of_val(&p1));
+    println!("p2 takes up {} bytes", mem::size_of_val(&p2));
+
+    let p3 = *p2; //where the * is the pointer to the Box where p2 is saved;
+    println!("p3.x = {}", p3.x);
 }

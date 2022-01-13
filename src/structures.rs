@@ -24,7 +24,8 @@ pub fn structures()
 
 // ENUMERATIONS
 // create an enumeration of colors
-// enum objects can comprise of ordinary members, tuple-like members, or struct members
+// 'enum' in Rust is a type that represents data that is one of several possible variants:
+// enum objects can comprise of ordinary members, tuple-like members, or struct members.
 enum Color {
     Red,
     Green,
@@ -33,7 +34,7 @@ enum Color {
     cmyk{cyan:u8, magenta:u8, yellow:u8, black:u8} //struct
 }
 
-// use a match statement to find our the color and print it
+// use a match statement to find out the color and print it
 // The function below does patter matching against the elements of an enum
 pub fn enums()
 {
@@ -94,8 +95,8 @@ pub fn options()
 pub fn array()
 // Before we even start, remember that arrays are object of FIXED size.
 // If you want something of variable size you must choose another data structure
-{   // VECTORS, that is a 1D arrray
-    // Fill in an array by specifying an initialized
+{   // VECTORS, that is a 1D array
+    // Fill in an array by specifying and initializing
     let mut a:[i32;5] = [1,2,3,4,5];  //an array is a data structure where the number of elements included is explicitly declared
     println!("Array {:?} has {} elements, first is {}", a, a.len(), a[0]);
     a[0] = 10;  //overwrite first element
@@ -196,7 +197,7 @@ pub fn tuples()
     println!("{:?}", mixed_tuple);
 
     // How do you make a single element tuple? It's simple, use a comma inside round brackets!
-    let meaning = (42,); //if you omit the comma you obtain an integer instead of a tuple
+    let meaning = (42,); //if you omit the comma you obtain an integer inside parentheses instead of a tuple
     println!("{:?}", meaning);
 }
 
@@ -214,4 +215,37 @@ pub fn generics()
     println!("a = ({},{}), b = ({},{})", a.x, a.y, b.x, b.y);
 
     let myline:Liny<f32> = Liny{start:b, end:c};
+}
+
+
+// PATTERN MATCHING
+fn how_many(x:i8) -> &'static str
+{
+    match x
+    {
+        0 => "no stuffies",
+        1|2|3|4 => "few stuffies",
+        12 => "a dozen",
+        z @ 6..=8 => "lots",  // z @ gives a name to the range
+        _ if (x % 2 == 0) => "even #",
+        _ => "many Yodas = happy Irene",
+    }
+}
+
+
+pub fn pattern_matching()
+{   // pattern match your count of Baby-Yodas
+    for i in 0..15
+    {
+        println!("{}: I have {} many Baby-Yoda stuffies", i, how_many(i));
+    };
+
+    // pattern match a point to its coordinates
+    let point = (0,3);
+    match point {
+        (0,0) => println!("origin"),
+        (x,0) => println!("lies on y-axix"),
+        (0,y) => println!("lies on x-axis"),
+        (_,_) => println!("elsewhere")
+    };
 }

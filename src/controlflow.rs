@@ -23,7 +23,7 @@ pub fn if_statement()
 
 
     // You can also use if statements inside the print line macro
-    temp = 25;
+    temp = 20;
     println!("Today is {}",
         if temp > 20 {"hot"} else if temp < 10 {"cold"} else {"moderate"});
 
@@ -32,7 +32,7 @@ pub fn if_statement()
          if temp > 20
              {
                if temp <= 25 {"hot, bwt 20-25 C degrees"}
-                 else {"hot, above 25 C degrees"}
+               else {"hot, above 25 C degrees"}
              }
          else if temp < 10 {"cold"}
          else {"moderate"});
@@ -41,10 +41,10 @@ pub fn if_statement()
 
 // The match statement is like the if statement which checks several cases at the same
 // You can think of the match statement as a surjective function mapping the elements in the domain to all elements in the image (in a match statement, image and codomain coincide)
-// Your match statement must be exhaustive: Rust is smart enough to force you to cover all possible cases, i.e. image=codomain must be the one and the some, otherwise it won't compute
+// Your match statement must be exhaustive: Rust is smart enough to force you to cover all possible cases, i.e. image=codomain must be the one and the same, otherwise it won't compute
 pub fn match_statement()
 {
-    let country_code = 123;
+    let country_code = 44;
     let country =  match country_code
     {
         44 => "UK",
@@ -101,8 +101,8 @@ pub fn for_loop()
     }
 
 
-    // Let's practise with a another for loop printing both the index and the value of the element
-    for (index, w) in (20..30).enumerate()
+    // Let's practise with another for loop printing both the index and the value of the element
+    for (index, w) in (20..30).enumerate() // .enumerate() is an iterator that returns a tuple (the current count, and the element during iteration)
     {
         println!("{}:{}", index, w);
     }

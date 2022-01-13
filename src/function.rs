@@ -132,7 +132,6 @@ pub fn closures()
 }
 
 
-
 // HIGHER ORDER FUNCTIONS are:
 
 // 1. functions that take functions
