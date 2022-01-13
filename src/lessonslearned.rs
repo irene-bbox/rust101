@@ -99,4 +99,14 @@ pub fn summary()
     let k: fn(i32) -> i32 = foo; // In this case, k is a ‘function pointer’ to a function that takes an i32 and returns an i32
     foo(d);
     k(d);
+
+
+    let l: char = 'l';
+    let m: &str = "I am a &str";
+    let n = "I am a String".to_string();
+    let n_slice = &n[0..=3];
+    let o: String = String::from("There's a jedi in our office");
+    let p = "Test String";
+    println!("l = {}, m = {}, n = {} o = {}, p = {}, n_slice={}", l, m, n, o, p, n_slice);
+    for i in m.chars() { println!("{}", i) };
 }
