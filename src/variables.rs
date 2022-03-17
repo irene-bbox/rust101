@@ -1,19 +1,15 @@
 #[allow(dead_code)]
 #[allow(unused_variables)]
-
 // Import Libraries
 use std::mem;
 
-
 // VARIABLES: primitives
-pub fn variables()
-{
+pub fn variables() {
     // VARIABLES TYPES: u8, u16, u32, u64, u128, i8, i16, ...
-    let a: u8 = 100;   // This is a variable declaration for a, which is now stored in memory as an u=unsigned, 8 bits, 0-255 number
-    println!("a = {}", a);   // a in now an immutable
-    // Beware all variables which are declared in Rust are IMMUTABLE variables.
-    // Mutable variables must be otherwise specified to be mutable at the time of variable declaration
-
+    let a: u8 = 100; // This is a variable declaration for a, which is now stored in memory as an u=unsigned, 8 bits, 0-255 number
+    println!("a = {}", a); // a in now an immutable
+                           // Beware all variables which are declared in Rust are IMMUTABLE variables.
+                           // Mutable variables must be otherwise specified to be mutable at the time of variable declaration
 
     // u = unsigned, with range 0 ... 2^N-1, e.g. 0 to 2^8-1=256-1=255, that is [0,255]
     // i = signed, with halved range -(2^N-1)/2 ... +(2^N-1)/2, e.g. -128 to 127, that is [-128,127]
@@ -31,8 +27,12 @@ pub fn variables()
     // VARIABLE TYPES: usize and isize
     let d: isize = 123;
     let size_of_d = mem::size_of_val(&d);
-    println!("d = {}, takes up {} bytes, {}-bit OS", d, size_of_d, size_of_d*8);
-
+    println!(
+        "d = {}, takes up {} bytes, {}-bit OS",
+        d,
+        size_of_d,
+        size_of_d * 8
+    );
 
     // VARIABLE TYPES: single characters
     let e: char = 'x';
@@ -40,8 +40,11 @@ pub fn variables()
     // to define a single character, use single quotes
     // a character or 'char' type variables isn't just a single letter, but it could also e punctuation, etc.
     // you will soon find out in the print statement below that a 'char' type variable takes up 32 bits or memory
-    println!("{} is a character, size = {} bytes", e, mem::size_of_val(&e));
-
+    println!(
+        "{} is a character, size = {} bytes",
+        e,
+        mem::size_of_val(&e)
+    );
 
     // VARIABLE TYPES: f32, f64, IEEE754 floating point numbers, which are non-whole numbers
     // There is no signed/unsigned distinction for floating point numbers !
@@ -58,17 +61,16 @@ pub fn variables()
     // Too bad, but this is the standard memory storage setting for Rust
 }
 
-
 // LOGIC OPERATORS
-pub fn operators()
-{ //ARITHMETIC operators
-    let mut a = (72/2-16)*5;
+pub fn operators() {
+    //ARITHMETIC operators
+    let mut a = (72 / 2 - 16) * 5;
     println!("a = {}", a);
-    a = a+1;
+    a = a + 1;
     a -= 90; // a = a-90
-    // Rust operators are -, +, *, /, % but also -=, +=, *=, /=, %=
-    // the % operator gives you the remainder of division
-    println!("Remainder of {}/{} = {}", a, 3, (a%3));
+             // Rust operators are -, +, *, /, % but also -=, +=, *=, /=, %=
+             // the % operator gives you the remainder of division
+    println!("Remainder of {}/{} = {}", a, 3, (a % 3));
 
     let a_cubed = i32::pow(a, 3);
     println!("{} cubed is {}", a, a_cubed);
@@ -86,10 +88,10 @@ pub fn operators()
     // ! means NOR = NEGATION operator
     // << means shift to the left, by padding with zeros
     // >> means shift to the right,     "     "      "
-    let c = 1|2;  // 10 OR 01 = 11 == 3
+    let c = 1 | 2; // 10 OR 01 = 11 == 3
     println!("1|2 = {}", c);
 
-    let two_to_10 = 1 << 10;  // Here we are saying that 2^10 in binary is 100000000000, b/c we have that in binary code 2=10, 2^2=4=100, 2^3=8=1000, and so on
+    let two_to_10 = 1 << 10; // Here we are saying that 2^10 in binary is 100000000000, b/c we have that in binary code 2=10, 2^2=4=100, 2^3=8=1000, and so on
     println!("2^10 = {}", two_to_10);
 
     // LOGICAL operators
@@ -98,22 +100,21 @@ pub fn operators()
     println!("Is pi < 4? {}", pi_less_4);
     let pi_is_314 = (std::f64::consts::PI) == 3.14;
     println!("Is pi = 3.14? {}", pi_is_314);
-    let x = 5;
+    let x: u8 = 5;
     let x_is_5 = x == 5;
     println!("{}", x_is_5);
 }
-
 
 // SCOPE AND SHADOWING
 // Notice that every variable has a scope and it only exists within the scope of the function where the variable is defined
 // i.e., if you define variable a inside function variables{} and then you only execute the function main(), the compiler returns an error
 // A scope in Rust is defined by opening and closing curly brackets {    }
 
-pub fn scope_and_shadowing()
-{ let a = 1;
+pub fn scope_and_shadowing() {
+    let a = 1;
 
     {
-        let b= 2;
+        let b = 2;
         println!("inside scope, b={}", b);
         let a = 7;
         println!("inside scope, a={}", a);
@@ -123,39 +124,34 @@ pub fn scope_and_shadowing()
     //println!("outside scope, b={}", b); This line does NOT run, b/c it's out of scope
 }
 
-
 // GLOBAL VARIABLES
 // In Rust there exist such a thing as GLOBAL variables, which are declared outside of the main function
 // Global variables can be mathematical constants or can be user-defined
 // Global variables can be mutable. If so, declare the scope to be 'unsafe'. If you run a mutable global variable outside of an 'unsafe' scope, Rust returns an error
-const MEANING_OF_LIFE:u8 = 42;
-static MY_CONSTANT:i8 = -42;
-static mut UNSAFE:i8 = 17;
-pub fn constants()
-{
+const MEANING_OF_LIFE: u8 = 42;
+static MY_CONSTANT: i8 = -42;
+static mut UNSAFE: i8 = 17;
+pub fn constants() {
     println!("const = {}, static = {}", MEANING_OF_LIFE, MY_CONSTANT);
 
-    unsafe
-        {
-            println!("Mutable global variable = {}", UNSAFE);
-            UNSAFE += 2;
-            println!("Mutable global variable after mutation = {}", UNSAFE);
-        }
+    unsafe {
+        println!("Mutable global variable = {}", UNSAFE);
+        UNSAFE += 2;
+        println!("Mutable global variable after mutation = {}", UNSAFE);
+    }
 }
 
-
 // STACK & HEAP
-struct Point {x:f64, y:f64}
+struct Point {
+    x: f64,
+    y: f64,
+}
 
+fn origin() -> Point {
+    Point { x: 0.0, y: 0.0 }
+} //a function creating the point 'origin' of the Cartesian Plane
 
-fn origin() -> Point
-{
-    Point{x:0.0, y:0.0}
-}  //a function creating the point 'origin' of the Cartesian Plane
-
-
-pub fn stack_and_heap()
-{
+pub fn stack_and_heap() {
     let p1 = origin(); //this is a stack allocation of p1
     let p2 = Box::new(origin()); //this is a heap allocation of p2
     println!("p1 takes up {} bytes", mem::size_of_val(&p1));
