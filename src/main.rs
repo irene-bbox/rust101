@@ -26,7 +26,7 @@ fn main() {
     //controlflow::while_loop();
     //controlflow::for_loop();
     //controlflow::permut_locker();
-    //structures::structures();
+    structures::structures();
     //structures::enums();
     //structures::unions();
     //structures::options();
@@ -51,5 +51,6 @@ fn main() {
     //traits::operatoroverload();
     //evenfibonacci::evenfib();
     //lessonslearned::summary();
-    contractfeatures::unserstand_semicolon();
+    //contractfeatures::understand_semicolon();
+    //contractfeatures::compare_eq();
 }

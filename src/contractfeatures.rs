@@ -1,7 +1,7 @@
 #[warn(unused_imports)] // disregard unused imports
 use subtle::ConstantTimeEq;
 
-pub fn test() {
+pub fn compare_eq() {
     // Declare two slices
     let s1: [u8; 8] = [0, 1, 2, 3, 4, 5, 6, 7];
     let s2: [u8; 8] = [0, 1, 2, 3, 0, 1, 2, 3];
@@ -14,8 +14,8 @@ pub fn test() {
     compare(&s1, &s2);
 }
 
-pub fn unserstand_semicolon() {
-    // To return a value from a function you have two options in rust:
+pub fn understand_semicolon() {
+    // To return a value from a function you have two options in Rust:
 
     // Use a return <some value>; expression
     fn returns_one() -> u8 {
@@ -31,14 +31,16 @@ pub fn unserstand_semicolon() {
     fn returns_unit() {
         1i64;
     }
-    returns_unit();
+    returns_unit(); // will not return anything b/c it's a unit type
 
     let is_unit = {
-        returns_one();
+        returns_one(); // will not return anything b/c it's a unit type, too
     };
 
     // Also: there's no need for semicolon at the end of a function (i.e., after declarign a function),
     // but you must use a semicolon after declaring a variable. Think of it as a linebreak.
     // Functions have already a scope that gets closed and acts as a linebreak, whereas
     // variable declarations need to come to an end via a semicolon!
+
+    println!("is_u8 = {}", is_u8);
 }
