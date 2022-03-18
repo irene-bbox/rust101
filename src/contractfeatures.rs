@@ -14,6 +14,14 @@ pub fn compare_eq() {
     compare(&s1, &s2);
 }
 
+pub fn bytecode() {
+    // 2 equivalent ways to convert a string into a slice of bytecode
+    let x = b"hello!";
+    let y = "hello!".as_bytes();
+
+    println!("'Hello!' in bytecode is = {:?} = {:?}", x, y);
+}
+
 pub fn understand_semicolon() {
     // To return a value from a function you have two options in Rust:
 
