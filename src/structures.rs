@@ -131,7 +131,8 @@ pub fn options() {
 // ARRAYS
 pub fn array()
 // Before we even start, remember that arrays are object of FIXED size.
-// If you want something of variable size you must choose another data structure
+// If you want something of variable size you must choose another data structure.
+// You CANNOT reisze an array (shorten or lengthen it). The only thing you can really do is replacing an element with another element.
 {
     // VECTORS, that is a 1D array
     // Fill in an array by specifying and initializing
@@ -161,7 +162,7 @@ pub fn array()
     println!("b takes up {} bytes", mem::size_of_val(&b)); //undeclared element types
     let c: [u16; 10] = [1; 10];
     println!("b takes up {} bytes", mem::size_of_val(&c)); //array of u16-type elements
-    let d: [i8; 10] = [1; 10];
+    let d = [1i8; 10];
     println!("b takes up {} bytes", mem::size_of_val(&d)); //array of i8-type elements
 
     // MATRICES, that is 2D+ arrays
@@ -189,6 +190,7 @@ pub fn array()
 
 // SLICES
 pub fn use_slice(slice: &mut [i32]) {
+    // &[] is a way to say that you're borrowing a slice, a part of on an array
     println!(
         "slice = {:?}, first elem = {}, len = {}",
         slice,
@@ -198,7 +200,7 @@ pub fn use_slice(slice: &mut [i32]) {
 }
 
 pub fn slices() {
-    // Slices are parts of an array whose size is unknown at declaration time.
+    // Slices are parts of an array whose size is unknown at declaration time & at compile time, also.
     // Mathematically, you can think of a slice as a mutable partition of an array. In other words, slices are the mutable counterpart to arrays.
 
     let mut slicy = [1, 2, 3, 4, 5];
