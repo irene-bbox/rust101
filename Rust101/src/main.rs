@@ -40,7 +40,7 @@ fn main() {
     //stdcollection::hashset();
     //stdcollection::iterators();
     //string::strings();
-    function::funk();
+    //function::funk();
     //function::methods();
     //function::closures();
     //function::high_order_fn();
@@ -54,4 +54,5 @@ fn main() {
     //contractfeatures::understand_semicolon();
     //contractfeatures::compare_eq();
     //contractfeatures::bytecode();
+    contractfeatures::hexa();
 }

@@ -12,3 +12,5 @@ edition = "2018"
 [dependencies]
 rand = "0.3"
 subtle = "2.4"
+near-sdk = "4.0.0-pre.4"         # sdk with functions to write smart contracts on NEAR Protocol blockchain
+hex = "0.4.3"                    # encrypt and decrypt in hexadecimal representation

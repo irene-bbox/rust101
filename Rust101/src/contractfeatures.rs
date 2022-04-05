@@ -1,3 +1,4 @@
+use near_sdk::env;
 #[warn(unused_imports)] // disregard unused imports
 use subtle::ConstantTimeEq;
 
@@ -51,4 +52,21 @@ pub fn understand_semicolon() {
     // variable declarations need to come to an end via a semicolon!
 
     println!("is_u8 = {}", is_u8);
+}
+
+pub fn hexa() {
+    // encrypt and decrypt into hexadecimal representation using the 'hex' crate
+    let my_sentence = "Spring 2022 just started!";
+    let sentence_hash_bytes = env::sha256(my_sentence.as_bytes());
+    let sentence_hash_string = hex::encode(sentence_hash_bytes);
+    println!("my_sentence is: {:?}", my_sentence);
+    println!(
+        "its hexadecimal representation is: {:?}, with length {}",
+        sentence_hash_string,
+        sentence_hash_string.len()
+    );
+    println!(
+        "Decrypting {:?} from hexadecimal into string representation yields {:?}",
+        sentence_hash_string, my_sentence
+    );
 }

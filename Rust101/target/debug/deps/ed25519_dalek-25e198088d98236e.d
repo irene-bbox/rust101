@@ -1,0 +1,11 @@
+/Users/irenefabris/Documents/GitHub/rust101/Rust101/target/debug/deps/ed25519_dalek-25e198088d98236e.rmeta: /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/lib.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/constants.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/keypair.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/errors.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/public.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/secret.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/signature.rs
+
+/Users/irenefabris/Documents/GitHub/rust101/Rust101/target/debug/deps/ed25519_dalek-25e198088d98236e.d: /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/lib.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/constants.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/keypair.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/errors.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/public.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/secret.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/signature.rs
+
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/lib.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/constants.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/keypair.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/errors.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/public.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/secret.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/ed25519-dalek-1.0.1/src/signature.rs:

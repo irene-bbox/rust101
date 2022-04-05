@@ -1,0 +1,11 @@
+/Users/irenefabris/Documents/GitHub/rust101/Rust101/target/debug/deps/tinyvec-a4168b18812ef75f.rmeta: /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/lib.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/array.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/array/generated_impl.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/arrayvec.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/arrayvec_drain.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/slicevec.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/tinyvec.rs
+
+/Users/irenefabris/Documents/GitHub/rust101/Rust101/target/debug/deps/tinyvec-a4168b18812ef75f.d: /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/lib.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/array.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/array/generated_impl.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/arrayvec.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/arrayvec_drain.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/slicevec.rs /Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/tinyvec.rs
+
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/lib.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/array.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/array/generated_impl.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/arrayvec.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/arrayvec_drain.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/slicevec.rs:
+/Users/irenefabris/.cargo/registry/src/github.com-1ecc6299db9ec823/tinyvec-1.5.1/src/tinyvec.rs:
