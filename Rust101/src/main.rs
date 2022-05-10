@@ -8,6 +8,7 @@ mod stdcollection;
 mod string;
 mod structures;
 mod traits;
+
 #[allow(dead_code)]
 #[allow(unused_variables)]
 // Import libraries
@@ -35,7 +36,7 @@ fn main() {
     //structures::tuples();
     //structures::generics();
     //structures::pattern_matching();
-    //stdcollection::vectors();
+    // stdcollection::vectors();
     //stdcollection::hashmap();
     //stdcollection::hashset();
     //stdcollection::iterators();
@@ -53,6 +54,9 @@ fn main() {
     //lessonslearned::summary();
     //contractfeatures::understand_semicolon();
     //contractfeatures::compare_eq();
-    //contractfeatures::bytecode();
-    contractfeatures::hexa();
+    // contractfeatures::bytecode();
+    // contractfeatures::hashing();
+    //contractfeatures::hexa();
+    // contractfeatures::storage();
+    contractfeatures::query_state();
 }

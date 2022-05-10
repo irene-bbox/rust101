@@ -13,6 +13,9 @@ use std::time;
 // Use vectors whenever you want to create array-like objects which grow dynamically.
 // Arrays have a pre-defined length and therefore cannot grow. Vectors can! A vector is pretty much like a stack of elements
 pub fn vectors() {
+    let empty_vec: Vec<i32> = vec![]; // create an empty vector
+    println!("An empty vector looks like this {:?}", empty_vec);
+
     let mut my_vec = Vec::new(); // create a mutable vector
     my_vec.push(11.0); // add values to the vector
     my_vec.push(12.0);
