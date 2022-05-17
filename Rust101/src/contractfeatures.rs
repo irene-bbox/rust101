@@ -157,4 +157,9 @@ pub fn query_state() {
     };
 
     println!("A sample 'State' is = {:?}", x.max_size);
+
+    // index the last element of a vector
+    let my_vec: Vec<i8> = vec![1, 2, 3, 4, 5];
+    let indx: usize = my_vec.len() - 1;
+    println!("The last element of a vector is: {}", my_vec[indx]);
 }
