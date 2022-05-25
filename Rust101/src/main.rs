@@ -56,7 +56,8 @@ fn main() {
     //contractfeatures::compare_eq();
     // contractfeatures::bytecode();
     // contractfeatures::hashing();
-    //contractfeatures::hexa();
+    // contractfeatures::hexa();
     // contractfeatures::storage();
-    contractfeatures::query_state();
+    // contractfeatures::query_state();
+    contractfeatures::convert_string_to_bytes();
 }

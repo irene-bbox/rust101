@@ -63,7 +63,8 @@ pub fn understand_semicolon() {
 
 pub fn hashing() {
     //now hash a random sequence of bytes using sha256
-    let b1 = "Yoda".as_bytes();
+    let b = "Yoda";
+    let b1 = b.as_bytes();
     assert_eq!(b"Yoda", b1, "Objects do not match");
     println!("The hash for 'Yoda' is = {:?}", env::sha256(b1));
 
@@ -98,49 +99,12 @@ pub fn hexa() {
     println!("The object type is: {}", type_of(my_var));
 }
 
-// pub fn testing() {
-//     pub struct Contract {
-//         token_by_id: LookupMap<String, String>,
-//     };
-
-//     impl Contract {
-//         pub fn nft_mint(&mut self, tokenid: Option<TokenId>) {
-//             self.token_by_id.insert(&tokenid, "Token1");
-//             assert!(
-//                 self.token_by_id.insert(&tokenid, "Token2").is_none(),
-//                 "Token already exists"
-//             );
-//         }
-//     };
-
-//     test = nft_mint("001");
-//     test;
-// }
-
 pub fn storage() {
     let my_var: u16 = 144;
 
     let used_storage = env::storage_usage();
     println!("The storage used thus far is {}", used_storage);
 }
-
-// pub fn lookupsets() {
-//     let a = b"s";
-//     let b = a.to_vec();
-//     // print object type
-//     println!("A = {:?}, and B ={:?} of type = {}", a, b, type_of(a));
-
-//     struct Contract {
-//         scores: LookupSet<String>,
-//     }
-
-//     pub fn my_contract() {
-//         let test = Contract {
-//             scores: LookupSet::new(String::from("Baby Yoda")),
-//         };
-//         println!("A sample contract is this: {:?}", test.scores);
-//     }
-// }
 
 pub fn query_state() {
     // Define a 'State' struct
@@ -162,4 +126,44 @@ pub fn query_state() {
     let my_vec: Vec<i8> = vec![1, 2, 3, 4, 5];
     let indx: usize = my_vec.len() - 1;
     println!("The last element of a vector is: {}", my_vec[indx]);
+}
+
+pub fn convert_string_to_bytes() {
+    // Some examples on how to convert a String or an &str object
+    // into a slice of bytes or into a vector of bytes
+
+    // &str to &[u8]
+    let a_string: &str = "some string";
+    let a_bytes: &[u8] = a_string.as_bytes();
+    println!("Example of a slice of bytes is: {:?}", a_bytes);
+    
+    // &str to Vec<u8>
+    let b_string: &str = "some string";
+    let b_bytes: Vec<u8> = b_string.as_bytes().to_vec();
+    println!("Example of a vector of bytes is: {:?}", b_bytes);
+    
+    // String to &[u8]
+    let c_string: String = "some string".to_owned();
+    let c_bytes: &[u8] = c_string.as_bytes();
+    println!("Example of a slice of bytes is: {:?}", c_bytes);
+    
+    // String to Vec<u8>
+    let d_string: String = "some string".to_owned();
+    let d_bytes: Vec<u8> = d_string.into_bytes();
+    println!("Example of a vector of bytes is: {:?}", d_bytes);
+}
+
+
+pub fn allocation_and_initialization() {
+    // allocate and initialize (simultaneously) a vector of zeros 
+    let vec = vec![0; 5];
+    assert_eq!(vec, [0, 0, 0, 0, 0]);
+
+    // The following is equivalent, but potentially slower because allocation and initialization happen consequently instead of concurrently
+    let mut vec = Vec::with_capacity(5);
+    vec.resize(5, 0);
+    assert_eq!(vec, [0, 0, 0, 0, 0]);
+
+    // LESSON LEARNED: it is generally faster to allocate and initialize concurrently, 
+    // especially when initializing a vector of zeros or when initializing a vector where all elements are the same value
 }
