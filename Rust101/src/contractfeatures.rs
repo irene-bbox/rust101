@@ -150,7 +150,22 @@ pub fn convert_string_to_bytes() {
     // String to Vec<u8>
     let d_string: String = "some string".to_owned();
     let d_bytes: Vec<u8> = d_string.into_bytes();
-    println!("Example of a vector of bytes is: {:?}", d_bytes);
+    println!("Example of a vector of bytes with length: {} is: {:?}", d_bytes.len(), d_bytes);
+
+    // A longest String
+    let e_string: String = "Your SCRTsibyl score is FAIR - 639 points. This score qualifies you for a short term loan
+    of up to $5,000 USD (1,011 SCRT) over a recommended pay back period of 6 monthly installments.
+    Part of your score is based on the transaction history of your Plaid diamond 12.5% apr interest credit card.
+    Your total current balance is $44,520 USD across all accounts. An error occurred while computing the
+    score metric called velocity. As a result, your score was rounded down.
+    Try again later or select an alternative bank account if you have one.".to_owned();
+    let e_bytes: Vec<u8> = e_string.into_bytes();
+    println!("Example of a vector of bytes of length: {} is {:?}", e_bytes.len(), e_bytes);
+
+    // The inverse method of as_bytes() is from_utf8()
+    let byteslice = "Secret Santa".as_bytes().to_vec();
+    let reversed_str = String::from_utf8(byteslice).unwrap();
+    println!("The reversed message is = {}", reversed_str);
 }
 
 

@@ -26,6 +26,7 @@ fn main() {
     //controlflow::match_statement();
     //controlflow::while_loop();
     //controlflow::for_loop();
+    controlflow::loop_over_vector();
     //controlflow::permut_locker();
     //structures::structures();
     //structures::enums();
@@ -59,5 +60,5 @@ fn main() {
     // contractfeatures::hexa();
     // contractfeatures::storage();
     // contractfeatures::query_state();
-    contractfeatures::convert_string_to_bytes();
+    // contractfeatures::convert_string_to_bytes();
 }
